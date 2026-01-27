@@ -1,0 +1,43 @@
+**Role:** Expert UI/UX Designer & Frontend Engineer
+**Task:** Build a high-converting Landing Page for the "X Verified Followers Exporter" Chrome Extension.
+**Tech Stack:** HTML, Tailwind CSS
+ 1. Design System: "High-Fidelity Claymorphism" (Strict Adherence)
+The UI must feel like "Digital Clay"—tactile, soft, and friendly.
+*   **Color Palette (Candy Shop):**
+    *   **Background:** `#F4F1FA` (Lavender White) - *Never pure white.*
+    *   **Text:** `#332F3A` (Soft Charcoal) for primary, `#635F69` for secondary.
+    *   **Accents:** `#7C3AED` (Vivid Violet) as primary, `#DB2777` (Hot Pink) for gradients, `#0EA5E9` (Sky Blue) for blobs.
+*   **Shape & Form:**
+    *   **Radii:** Aggressively rounded. `rounded-[48px]` for containers, `rounded-[32px]` for cards, `rounded-[20px]` for buttons. *Zero sharp corners.*
+    *   **Physics:** Elements must feel dense. Buttons "squish" on click (`active:scale-[0.95]` + inset shadow). Cards "float" on hover (`hover:-translate-y-2`).
+*   **Shadows (The "Clay" Engine):**
+    *   *Clay Card:* `box-shadow: 16px 16px 32px rgba(160,150,180,0.2), -10px -10px 24px rgba(255,255,255,0.9), inset 6px 6px 12px rgba(139,92,246,0.03), inset -6px -6px 12px rgba(255,255,255,1);`
+    *   *Pressed/Input:* `box-shadow: inset 10px 10px 20px #d9d4e3, inset -10px -10px 20px #ffffff;`
+*   **Typography:**
+    *   Headings: **Nunito** (ExtraBold/Black).
+    *   Body: **DM Sans** (Medium).
+ 2. Page Content & Structure
+**A. Hero Section (The Hook)**
+*   **Layout:** Split layout (Text Left, 3D Visual Right).
+*   **Headline:** "Export X Followers. Safely. Locally." (Font: Nunito Black, text-7xl).
+*   **Subheadline:** "The zero-risk, zero-config browser extension that respects your privacy. No API keys needed."
+*   **CTA:** "Add to Browser" (Clay Button: Violet-to-Purple Gradient).
+*   **Visual:** A floating, glass-morphic clay card demonstrating the tool interface with the logo `Xexporter.png`.
+*   **Background:** Animated, floating abstract blobs (blur-3xl) drifting in the background.
+**B. Key Advantages (Bento Grid Layout)**
+*   *Card 1 (The Core USP - Large):* **"Stealth Mode Traffic"**
+    *   "Parasitic" architecture that listens to passive traffic. No active crawling requests. Simulates human scrolling with randomized intervals (1.5s - 3.5s).
+*   *Card 2:* **"Zero Configuration"**
+    *   No expensive Twitter API keys. No OAuth. Reuses your active browser session instantly.
+*   *Card 3:* **"WYSIWYG Data"**
+    *   Bypasses API rate limits. If you can see it (Blue Verified, Follows You), we can export it.
+*   *Card 4:* **"Anti-Ban Shield"**
+    *   Automatically piggybacks on official `x-csrf-token` and headers. Immune to frontend encryption updates.
+*   *Card 5:* **"Local Privacy"**
+    *   100% browser-local execution. Data exports directly to CSV. No third-party servers.
+**C. How It Works (Simple 3-Step)**
+1.  **Install & Pin**: Add the extension to Chrome/Edge.
+2.  **Browse**: Visit any Followers/Following page on X.com.
+3.  **Export**: Click the floating panel to auto-scroll and download CSV.
+ 3. Implementation Details
+*   Ensure the CSV export functionality is highlighted as the primary outcome.

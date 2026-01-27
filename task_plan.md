@@ -4,7 +4,7 @@
 将脚本迁移为带有悬浮 UI 的 Chrome 插件 (Manifest V3)，提升使用体验。
 
 ## Current Phase
-Phase 4: Chrome Extension Migration
+Phase 5: Cleanup & Documentation
 
 ## Phases
 
@@ -27,25 +27,31 @@ Phase 4: Chrome Extension Migration
 - **Status:** complete
 
 ### Phase 4: Chrome Extension Migration
-- [ ] Create `extension/manifest.json` (V3, world: MAIN).
-- [ ] Implement `extension/content.js`:
-    - [ ] Port core scraping logic.
-    - [ ] Create Floating UI (Start/Stop/Download buttons).
-    - [ ] Connect UI to logic (Event handling).
-- [ ] Create placeholder icons (optional, or use emoji in UI).
-- **Status:** in_progress
+- [x] Create `extension/manifest.json` (V3, world: MAIN).
+- [x] Implement `extension/content.js`:
+    - [x] Port core scraping logic.
+    - [x] Create Floating UI (Start/Stop/Download buttons).
+    - [x] Connect UI to logic (Event handling).
+- [x] Create placeholder icons.
+- [x] UI Refinement: Reduction to Essence (Minimalist Design).
+- [x] Feature: Multi-type export (Verified/Followers/Following).
+- [x] Feature: Configurable parameters in UI.
+- [x] CSV Update: English headers, remove Verified column.
+- **Status:** complete
 
-### Phase 5: Testing & Verification
-- [ ] Verify UI rendering on page.
-- [ ] Verify XHR interception in Extension mode.
-- [ ] Test Start/Stop/Download workflow.
-- **Status:** pending
+### Phase 5: Cleanup & Documentation
+- [x] Remove legacy `fetch_x_followers.js`.
+- [x] Update `AGENTS.md` to reflect extension architecture.
+- [x] Update project progress logs.
+- **Status:** complete
 
 ## Decisions Made
 | Decision | Rationale |
 |----------|-----------|
 | `execution_world: "MAIN"` | Required for XHR hooking in MV3. |
 | Floating UI | Replaces console logs for better UX. |
+| Single Version | Removed bookmark script to focus on extension maintenance. |
+| Minimalist UI | Focus on function and clarity, "Reduction to Essence". |
 
 ## Errors Encountered
 | Error | Resolution |
