@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "X Verified Followers Exporter",
+  "name": "Exporter tool for X (Twitter)",
   "version": "1.0",
   "description": "Export Blue Verified Followers from X (Twitter) to CSV with infinite scroll support.",
   "icons": {
