@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - X Exporter</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=Nunito:wght@700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bg: '#F4F1FA',
+                        text: {
+                            primary: '#332F3A',
+                            secondary: '#635F69'
+                        },
+                        accent: {
+                            violet: '#7C3AED',
+                            pink: '#DB2777',
+                            sky: '#0EA5E9'
+                        }
+                    },
+                    fontFamily: {
+                        nunito: ['Nunito', 'sans-serif'],
+                        dm: ['DM Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F4F1FA;
+            font-family: 'DM Sans', sans-serif;
+            color: #332F3A;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
+        }
+
+        .clay-card {
+            background: #F4F1FA;
+            box-shadow: 16px 16px 32px rgba(160, 150, 180, 0.2), -10px -10px 24px rgba(255, 255, 255, 0.9), inset 6px 6px 12px rgba(139, 92, 246, 0.03), inset -6px -6px 12px rgba(255, 255, 255, 1);
+            border-radius: 24px;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen py-12 px-6">
+    <div class="max-w-3xl mx-auto">
+        <a href="index.html" class="inline-flex items-center text-accent-violet font-bold mb-8 hover:opacity-80 transition-opacity">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+            </svg>
+            Back to Home
+        </a>
+
+        <div class="clay-card p-8 md:p-12">
+            <h1 class="text-4xl mb-8">Terms of Service</h1>
+            
+            <div class="space-y-6 text-text-secondary leading-relaxed">
+                <p>Last updated: January 28, 2026</p>
+                
+                <section>
+                    <h2 class="text-2xl text-text-primary mb-3">1. Acceptance of Terms</h2>
+                    <p>By installing and using the X Exporter browser extension, you agree to be bound by these Terms of Service. If you do not agree, please do not use the service.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl text-text-primary mb-3">2. Description of Service</h2>
+                    <p>X Exporter provides a tool to help users export data from X (Twitter) into CSV format. The tool operates locally within your browser and does not require server-side processing of your X data.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl text-text-primary mb-3">3. User Responsibilities</h2>
+                    <p>You are responsible for your use of the extension and for any data you export. You agree to use X Exporter in compliance with all applicable laws and the Terms of Service of X (Twitter).</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl text-text-primary mb-3">4. Intellectual Property</h2>
+                    <p>All software, designs, and content within the X Exporter extension and website are the property of X Exporter. You may not claim ownership or attempt to reverse-engineer the software.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl text-text-primary mb-3">5. Disclaimer of Warranties</h2>
+                    <p>X Exporter is provided "as is" without warranty of any kind. We do not guarantee that the service will be uninterrupted or error-free, especially as it depends on the layout and API of X.com which may change without notice.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl text-text-primary mb-3">6. Limitation of Liability</h2>
+                    <p>In no event shall X Exporter be liable for any damages (including, without limitation, damages for loss of data or profit) arising out of the use or inability to use the service.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl text-text-primary mb-3">7. Governing Law</h2>
+                    <p>These terms shall be governed by and construed in accordance with the laws of the jurisdiction in which the service operator resides, without regard to its conflict of law provisions.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl text-text-primary mb-3">8. Changes to Terms</h2>
+                    <p>We reserve the right to modify these terms at any time. Your continued use of the service following any changes constitutes acceptance of the new terms.</p>
+                </section>
+            </div>
+        </div>
+
+        <footer class="mt-12 text-center text-text-secondary text-sm">
+            &copy; 2026 X Exporter. All rights reserved. Not affiliated with X Corp.
+        </footer>
+    </div>
+</body>
+
+</html>

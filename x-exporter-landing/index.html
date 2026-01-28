@@ -134,7 +134,7 @@
         <nav class="flex justify-between items-center mb-16 lg:mb-24">
             <div class="flex items-center gap-3 clay-card px-6 py-3 rounded-full !rounded-[20px] hover:!translate-y-0">
                 <img src="Xexporter.png" alt="Logo" class="w-8 h-8 rounded-lg">
-                <span class="font-nunito font-extrabold text-xl text-text-primary">X Exporter</span>
+                <span class="font-nunito font-extrabold text-xl text-text-primary">Exporter tool for X (Twitter)</span>
             </div>
             <a href="#" class="clay-btn px-6 py-3 rounded-[20px] font-bold text-sm lg:text-base">Get Extension</a>
         </nav>
@@ -159,7 +159,7 @@
                                 d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                         </svg>
                     </button>
-                    <button
+                    <button id="watchDemoBtn"
                         class="clay-card px-8 py-4 !rounded-[20px] font-bold text-text-primary flex items-center justify-center gap-2 hover:text-accent-violet transition-colors">
                         <span>Watch Demo</span>
                     </button>
@@ -205,7 +205,7 @@
         <!-- Key Advantages (Bento Grid) -->
         <section class="mb-32">
             <h2 class="text-3xl lg:text-4xl font-nunito font-black text-center text-text-primary mb-16">
-                Why <span class="text-accent-violet">X Exporter</span>?
+                Why <span class="text-accent-violet">Exporter tool for X (Twitter)</span>?
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
@@ -338,10 +338,55 @@
         </section>
 
         <footer class="text-center text-text-secondary text-sm pb-8">
-            &copy; 2024 X Exporter. All rights reserved. Not affiliated with X Corp.
+            <div class="flex justify-center gap-6 mb-4">
+                <a href="privacy.html" class="hover:text-accent-violet transition-colors">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-accent-violet transition-colors">Terms of Service</a>
+            </div>
+            &copy; 2026 Exporter tool for X (Twitter). All rights reserved. Not affiliated with X Corp.
         </footer>
 
     </div>
+
+    <!-- Video Modal -->
+    <div id="videoModal"
+        class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+        <div class="relative w-full max-w-4xl aspect-video clay-card !p-0 overflow-hidden !rounded-3xl shadow-2xl">
+            <button id="closeModal"
+                class="absolute top-4 right-4 z-20 w-10 h-10 bg-black/20 hover:bg-black/40 rounded-full flex items-center justify-center text-white transition-all">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+            <iframe id="videoIframe" class="w-full h-full" src="" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        const watchDemoBtn = document.getElementById('watchDemoBtn');
+        const videoModal = document.getElementById('videoModal');
+        const closeModal = document.getElementById('closeModal');
+        const videoIframe = document.getElementById('videoIframe');
+
+        watchDemoBtn.onclick = () => {
+            videoIframe.src = "https://www.youtube.com/embed/Yz4R5orFIs0?autoplay=1";
+            videoModal.classList.remove('hidden');
+            videoModal.classList.add('flex');
+        };
+
+        const hideModal = () => {
+            videoModal.classList.add('hidden');
+            videoModal.classList.remove('flex');
+            videoIframe.src = "";
+        };
+
+        closeModal.onclick = hideModal;
+        videoModal.onclick = (e) => {
+            if (e.target === videoModal) hideModal();
+        };
+    </script>
 </body>
 
 </html>
