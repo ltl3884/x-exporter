@@ -10,9 +10,21 @@
 !AGENTS.md
 !CLAUDE.md
 !PRIVACY.md
+!package.json
+!package-lock.json
+!build.sh
+!BUILD.md
 
 # 在所有地方依然忽略系统垃圾文件和日志
 **/.DS_Store
 **/Thumbs.db
 **/*.log
 node_modules/
+build_temp/
+
+# 忽略构建产物（可选，如果想保留历史版本可注释掉）
+# x_exporter_v*.zip
+
+# 忽略 UI 提示文件
+**/UI_PROMPT.md
+**/UI_PROMPT

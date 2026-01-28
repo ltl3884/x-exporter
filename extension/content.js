@@ -622,7 +622,7 @@ class XExporter {
 
         this.ui.btnStop.style.display = 'none';
 
-        this.updateStatus(this.state.currentPageType ? 'version:1.1' : 'WAITING_FOR_LINK...');
+        this.updateStatus(this.state.currentPageType ? 'version:1.2' : 'WAITING_FOR_LINK...');
     }
 
     updateStatus(text) {
