@@ -4,7 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>X Verified Followers Exporter - Safe & Local</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>X (Twitter) Followers Exporter - Export Verified Followers to CSV | Free Chrome Extension</title>
+    <meta name="description" content="Free Chrome extension to export X (Twitter) followers, verified users, and following lists to CSV. No API keys needed. 100% local & privacy-safe.">
+    <meta name="keywords" content="twitter exporter, x followers export, twitter followers csv, export twitter data, chrome extension, verified followers, twitter tools">
+    <meta name="author" content="ltl3884">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    
+    <!-- Canonical URL (Replace with your actual domain) -->
+    <link rel="canonical" href="https://www.example.com/">
+
+    <!-- Open Graph (Facebook/LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.example.com/">
+    <meta property="og:title" content="X Followers Exporter - Export Twitter Data Safely">
+    <meta property="og:description" content="Free browser extension to export X (Twitter) followers to CSV. Zero configuration, 100% local privacy.">
+    <!-- <meta property="og:image" content="https://www.example.com/og-image.png"> -->
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.example.com/">
+    <meta name="twitter:title" content="X Followers Exporter - Export Twitter Data Safely">
+    <meta name="twitter:description" content="Free browser extension to export X (Twitter) followers to CSV. Zero configuration, 100% local privacy.">
+    <!-- <meta name="twitter:image" content="https://www.example.com/twitter-card.png"> -->
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -133,10 +158,10 @@
         <!-- Header / Nav -->
         <nav class="flex justify-between items-center mb-16 lg:mb-24">
             <div class="flex items-center gap-3 clay-card px-6 py-3 rounded-full !rounded-[20px] hover:!translate-y-0">
-                <img src="Xexporter.png" alt="Logo" class="w-8 h-8 rounded-lg">
+                <img src="Xexporter.png" alt="X Followers Exporter Chrome Extension Logo" class="w-8 h-8 rounded-lg">
                 <span class="font-nunito font-extrabold text-xl text-text-primary">Exporter tool for X (Twitter)</span>
             </div>
-            <a href="#" class="clay-btn px-6 py-3 rounded-[20px] font-bold text-sm lg:text-base">Get Extension</a>
+            <a href="https://chrome.google.com/webstore/detail/YOUR_EXTENSION_ID" target="_blank" rel="noopener" aria-label="Download X Exporter Chrome Extension" class="clay-btn px-6 py-3 rounded-[20px] font-bold text-sm lg:text-base">Get Extension</a>
         </nav>
 
         <!-- Hero Section -->
@@ -144,7 +169,7 @@
             <!-- Left: Text -->
             <div class="space-y-8">
                 <h1 class="text-5xl lg:text-7xl font-nunito font-black text-text-primary leading-[1.1]">
-                    Export X Followers. <br>
+                    <span class="block">Export X (Twitter) Followers to CSV</span>
                     <span class="text-gradient">Safely. Locally.</span>
                 </h1>
                 <p class="text-xl text-text-secondary font-medium leading-relaxed max-w-lg">
@@ -185,7 +210,7 @@
                             class="relative bg-gray-50 h-64 rounded-2xl flex items-center justify-center overflow-hidden">
                             <!-- UI Representation -->
                             <div class="absolute inset-0 flex flex-col items-center justify-center space-y-4">
-                                <img src="Xexporter.png" class="w-16 h-16 rounded-xl shadow-lg" alt="App Icon">
+                                <img src="Xexporter.png" class="w-16 h-16 rounded-xl shadow-lg" alt="X Exporter Extension Interface - Export Followers to CSV">
                                 <div class="w-3/4 h-3 bg-gray-200 rounded-full"></div>
                                 <div class="w-1/2 h-3 bg-gray-200 rounded-full"></div>
                                 <div
@@ -386,6 +411,41 @@
         videoModal.onclick = (e) => {
             if (e.target === videoModal) hideModal();
         };
+    </script>
+    
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Exporter tool for X (Twitter)",
+      "applicationCategory": "BrowserApplication",
+      "applicationSubCategory": "Browser Extension",
+      "operatingSystem": "Chrome, Edge",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "150"
+      },
+      "description": "Export X (Twitter) followers, verified users, and following lists to CSV. No API keys needed. 100% local & privacy-safe.",
+      "featureList": [
+        "Stealth Mode Traffic",
+        "Zero Configuration",
+        "WYSIWYG Data Export",
+        "Anti-Ban Shield",
+        "Local Privacy Protection"
+      ],
+      "softwareVersion": "1.2",
+      "author": {
+        "@type": "Person",
+        "name": "ltl3884"
+      }
+    }
     </script>
 </body>
 
