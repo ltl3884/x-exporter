@@ -1,37 +1,18 @@
-# Dependencies
+# 忽略根目录下所有内容
+/*
+
+# 排除规则（保留目标文件夹）
+!/extension/
+!/x-exporter-landing/
+
+# 保留必要的配置文件
+!.gitignore
+!AGENTS.md
+!CLAUDE.md
+!PRIVACY.md
+
+# 在所有地方依然忽略系统垃圾文件和日志
+**/.DS_Store
+**/Thumbs.db
+**/*.log
 node_modules/
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
-
-# System Files
-.DS_Store
-Thumbs.db
-
-# Environment Variables
-.env
-.env.local
-
-# Build Outputs
-dist/
-build/
-
-# Logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Data/Output Files
-result.json
-X_BlueVerifiedFollowers
-*.csv
-*.jsonl
-
-# IDE/Editor
-.idea/
-.vscode/
-*.swp
-*.swo
-x-exporter-landing/google40951b01d28cc935.html
-.vercel
