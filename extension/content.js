@@ -19,11 +19,14 @@ class XExporter {
             autoScrollTimer: null,
             isScraping: false,
             currentPageType: '',
-            targetUrlPart: ''
+            targetUrlPart: '',
+            isMinimized: false
         };
 
         this.ui = {
             panel: null,
+            body: null,
+            minimizeBtn: null,
             countLabel: null,
             statusLabel: null,
             btnVerified: null,
@@ -296,6 +299,29 @@ class XExporter {
                 opacity: 1;
                 transform: translateX(-50%) translateY(-4px);
             }
+
+            .x-exporter-body {
+                overflow: hidden;
+                transition: max-height 0.3s ease, opacity 0.3s ease;
+            }
+
+            .x-exporter-body.collapsed {
+                max-height: 0 !important;
+                opacity: 0;
+            }
+
+            .x-exporter-minimize-btn {
+                cursor: pointer;
+                transition: transform 0.3s ease;
+            }
+
+            .x-exporter-minimize-btn:hover {
+                transform: scale(1.2);
+            }
+
+            .x-exporter-minimize-btn.minimized {
+                transform: rotate(180deg);
+            }
         `;
         document.head.appendChild(style);
 
@@ -318,16 +344,27 @@ class XExporter {
         const header = document.createElement('div');
         header.style.cssText = 'display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; border-bottom: 1px solid rgba(124, 58, 237, 0.15); padding-bottom: 10px;';
         const iconHtml = '<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB/UlEQVR4AWySy05UQRCGv+oBxhCZGMEFGJZufApRV76DD6DRRMW3YFzgRl37FpKwdGPiko0xLjQGb8glEkeH0/5/ncOMMdY5f9e9qru6y6Ot93X4QviXy7YhDLc+1KF9HTaStzb7C0lBrR2ajkvHaKDaJrR6gG32CV2BrALyGWEORARNrZgq/sAuWyIlKDUDKlGZkBooHGZ7r+nNVKKMWerfYq7sqHnNOOcZRURGF3hwbTmxLr5+fZk7V25wb+0i96+usj9+wmD2MRHKF1wmIihN461J6LYQEewf/+br4U++HY74IhyPxrQbrSz2b2MKdXWRgqopRzYJWl+9O+Dc/CxLgzMsDvpcEOb7M8z3noMCS8CgNwRCH1ifVEd0eeWsVnJ4HqChZhyPb6bdXQ/GD1P2oiGCCncL7Oz+wFRUushhEKhGsDd6xvfRUyJkUJCLFZ9lqsLLt/ty6bdXbPo7SvP6y+6xaQZ2MLnGu2urmN58PMLYO/plldDn3PZIkrQLvSOKvVLNEpErXFpZSJxfmJNFEacOaaiYzuRztQUQVYmb27tsbn/6Dz4reLp9SZkho7IkutqJ34MaNbXRrShEF++X1nRcFkcK4f7OTeQtyJq/aiiZvMITJbbJrS41Y1A3y+qVejsDWUJqnHLLhgbliumTrlzl67Ay2KUr5A8AAAD//yeeHFAAAAAGSURBVAMAlmEjo5Yq8TIAAAAASUVORK5CYII=" style="width: 12px; height: 12px;" alt="" />';
-        header.innerHTML = `
-            <span style="display: inline-flex; align-items: center; gap: 6px; font-weight: 800; font-size: 14px; letter-spacing: 0.6px; color: var(--clay-text);">
-                ${iconHtml}
-                X EXPORTER
-            </span>
-            <div style="width: 10px; height: 10px; background: linear-gradient(145deg, #F9A8D4, #DB2777); border-radius: 999px; box-shadow: 2px 2px 6px rgba(219, 39, 119, 0.35), -2px -2px 6px rgba(255, 255, 255, 0.8);"></div>
-        `;
+
+        // 左侧：图标 + 标题
+        const titleSpan = document.createElement('span');
+        titleSpan.style.cssText = 'display: inline-flex; align-items: center; gap: 6px; font-weight: 800; font-size: 14px; letter-spacing: 0.6px; color: var(--clay-text);';
+        titleSpan.innerHTML = `${iconHtml} X EXPORTER`;
+
+        // 右侧：最小化按钮（粉色短横线）
+        const minimizeBtn = document.createElement('div');
+        minimizeBtn.className = 'x-exporter-minimize-btn';
+        minimizeBtn.style.cssText = 'width: 18px; height: 4px; background: linear-gradient(145deg, #F9A8D4, #DB2777); border-radius: 2px; box-shadow: 2px 2px 6px rgba(219, 39, 119, 0.35), -2px -2px 6px rgba(255, 255, 255, 0.8);';
+        minimizeBtn.onclick = () => this.toggleMinimize();
+        this.ui.minimizeBtn = minimizeBtn;
+
+        header.appendChild(titleSpan);
+        header.appendChild(minimizeBtn);
         panel.appendChild(header);
 
         const body = document.createElement('div');
+        body.className = 'x-exporter-body';
+        body.style.maxHeight = '600px';
+        this.ui.body = body;
 
         // 配置区域
         const configSection = document.createElement('div');
@@ -594,6 +631,18 @@ class XExporter {
         }
     }
 
+    toggleMinimize() {
+        this.state.isMinimized = !this.state.isMinimized;
+
+        if (this.state.isMinimized) {
+            this.ui.body.classList.add('collapsed');
+            this.ui.minimizeBtn.classList.add('minimized');
+        } else {
+            this.ui.body.classList.remove('collapsed');
+            this.ui.minimizeBtn.classList.remove('minimized');
+        }
+    }
+
     updateCount() {
         if (this.ui.countLabel) {
             this.ui.countLabel.innerText = this.state.collectedUsers.size;
@@ -688,13 +737,18 @@ class XExporter {
                 const userId = result.rest_id;
                 const legacy = result.legacy || {};
                 const core = result.core || {};
-                const relationship_perspectives = result.relationship_perspectives || {}
+                const relationship_perspectives = result.relationship_perspectives || {};
+                const dm_permissions = result.dm_permissions || {};
+                const avatar = result.avatar || {};
 
                 if (userId && !this.state.collectedUsers.has(userId)) {
                     this.state.collectedUsers.set(userId, {
                         id: userId,
                         screen_name: core.screen_name || legacy.screen_name || '',
                         name: core.name || legacy.name || '',
+                        can_dm: dm_permissions.can_dm || false,
+                        description: legacy.description || '',
+                        avatar_url: avatar.image_url || '',
                         followers_count: legacy.followers_count || 0,
                         friends_count: legacy.friends_count || 0,
                         is_blue_verified: result.is_blue_verified || false,
@@ -822,20 +876,23 @@ class XExporter {
     downloadCSV() {
         if (this.state.collectedUsers.size === 0) return;
 
-        const headers = ['User ID', 'Username', 'Display Name', 'Followers', 'Following Count', 'Blue Verified', 'Created At', 'Tweets', 'Followed By', 'Following'];
+        const headers = ['User ID', 'Username', 'Display Name', 'Can DM', 'Followers', 'Following Count', 'Blue Verified', 'Created At', 'Tweets', 'Followed By', 'Following', 'Avatar Url', 'Description'];
         const rows = Array.from(this.state.collectedUsers.values()).map(u => {
             const escape = (text) => `"${String(text).replace(/"/g, '""')}"`;
             return [
                 escape(u.id),
                 escape(u.screen_name),
                 escape(u.name),
+                u.can_dm,
                 u.followers_count,
                 u.friends_count,
                 u.is_blue_verified,
                 escape(this.formatDate(u.created_at)),
                 u.tweets_count,
                 u.followed_by,
-                u.following
+                u.following,
+                escape(u.avatar_url),
+                escape(u.description)
             ].join(',');
         });
 
