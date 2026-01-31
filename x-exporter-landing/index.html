@@ -2,16 +2,28 @@
 <html lang="en">
 
 <head>
+    <!-- Google Analytics 4 (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QSLSSQHRQZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-QSLSSQHRQZ');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
     <title>X (Twitter) Followers Exporter - Export Verified Followers to CSV | Free Chrome Extension</title>
-    <meta name="description" content="Free Chrome extension to export X (Twitter) followers, verified users, and following lists to CSV. No API keys needed. 100% local & privacy-safe.">
-    <meta name="keywords" content="twitter exporter, x followers export, twitter followers csv, export twitter data, chrome extension, verified followers, twitter tools">
+    <meta name="description"
+        content="Free Chrome extension to export X (Twitter) followers, verified users, and following lists to CSV. No API keys needed. 100% local & privacy-safe.">
+    <meta name="keywords"
+        content="twitter exporter, x followers export, twitter followers csv, export twitter data, chrome extension, verified followers, twitter tools">
     <meta name="author" content="ltl3884">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    
+
     <!-- Canonical URL (Replace with your actual domain) -->
     <link rel="canonical" href="https://www.example.com/">
 
@@ -19,15 +31,17 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.example.com/">
     <meta property="og:title" content="X Followers Exporter - Export Twitter Data Safely">
-    <meta property="og:description" content="Free browser extension to export X (Twitter) followers to CSV. Zero configuration, 100% local privacy.">
+    <meta property="og:description"
+        content="Free browser extension to export X (Twitter) followers to CSV. Zero configuration, 100% local privacy.">
     <!-- <meta property="og:image" content="https://www.example.com/og-image.png"> -->
     <meta property="og:locale" content="en_US">
-    
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://www.example.com/">
     <meta name="twitter:title" content="X Followers Exporter - Export Twitter Data Safely">
-    <meta name="twitter:description" content="Free browser extension to export X (Twitter) followers to CSV. Zero configuration, 100% local privacy.">
+    <meta name="twitter:description"
+        content="Free browser extension to export X (Twitter) followers to CSV. Zero configuration, 100% local privacy.">
     <!-- <meta name="twitter:image" content="https://www.example.com/twitter-card.png"> -->
 
     <!-- Google Fonts -->
@@ -37,104 +51,8 @@
         href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=Nunito:wght@700;800;900&display=swap"
         rel="stylesheet">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        bg: '#F4F1FA',
-                        text: {
-                            primary: '#332F3A',
-                            secondary: '#635F69'
-                        },
-                        accent: {
-                            violet: '#7C3AED',
-                            pink: '#DB2777',
-                            sky: '#0EA5E9'
-                        }
-                    },
-                    fontFamily: {
-                        nunito: ['Nunito', 'sans-serif'],
-                        dm: ['DM Sans', 'sans-serif']
-                    },
-                    boxShadow: {
-                        'clay': '16px 16px 32px rgba(160,150,180,0.2), -10px -10px 24px rgba(255,255,255,0.9), inset 6px 6px 12px rgba(139,92,246,0.03), inset -6px -6px 12px rgba(255,255,255,1)',
-                        'clay-hover': '20px 20px 40px rgba(160,150,180,0.25), -12px -12px 28px rgba(255,255,255,0.95), inset 6px 6px 12px rgba(139,92,246,0.03), inset -6px -6px 12px rgba(255,255,255,1)',
-                        'pressed': 'inset 10px 10px 20px #d9d4e3, inset -10px -10px 20px #ffffff',
-                        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.37)'
-                    },
-                    borderRadius: {
-                        '4xl': '32px',
-                        '5xl': '48px',
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'blob': 'blob 7s infinite'
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        },
-                        blob: {
-                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            background-color: #F4F1FA;
-            font-family: 'DM Sans', sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-family: 'Nunito', sans-serif;
-        }
-
-        .clay-card {
-            background: #F4F1FA;
-            box-shadow: 16px 16px 32px rgba(160, 150, 180, 0.2), -10px -10px 24px rgba(255, 255, 255, 0.9), inset 6px 6px 12px rgba(139, 92, 246, 0.03), inset -6px -6px 12px rgba(255, 255, 255, 1);
-            border-radius: 32px;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-
-        .clay-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 20px 20px 40px rgba(160, 150, 180, 0.25), -12px -12px 28px rgba(255, 255, 255, 0.95), inset 6px 6px 12px rgba(139, 92, 246, 0.03), inset -6px -6px 12px rgba(255, 255, 255, 1);
-        }
-
-        .clay-btn {
-            background: linear-gradient(135deg, #7C3AED, #DB2777);
-            color: white;
-            box-shadow: 8px 8px 16px rgba(124, 58, 237, 0.3), -4px -4px 12px rgba(255, 255, 255, 0.5);
-            transition: all 0.1s ease;
-        }
-
-        .clay-btn:active {
-            transform: scale(0.95);
-            box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .text-gradient {
-            background: linear-gradient(to right, #7C3AED, #DB2777);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-    </style>
+    <!-- Local CSS -->
+    <link href="styles.css" rel="stylesheet">
 </head>
 
 <body class="min-h-screen relative overflow-x-hidden selection:bg-accent-violet selection:text-white">
@@ -158,10 +76,12 @@
         <!-- Header / Nav -->
         <nav class="flex justify-between items-center mb-16 lg:mb-24">
             <div class="flex items-center gap-3 clay-card px-6 py-3 rounded-full !rounded-[20px] hover:!translate-y-0">
-                <img src="Xexporter.png" alt="X Followers Exporter Chrome Extension Logo" class="w-8 h-8 rounded-lg">
+                <img src="Xexporter.webp" alt="X Followers Exporter Chrome Extension Logo" class="w-8 h-8 rounded-lg">
                 <span class="font-nunito font-extrabold text-xl text-text-primary">Exporter tool for X (Twitter)</span>
             </div>
-            <a href="https://chrome.google.com/webstore/detail/YOUR_EXTENSION_ID" target="_blank" rel="noopener" aria-label="Download X Exporter Chrome Extension" class="clay-btn px-6 py-3 rounded-[20px] font-bold text-sm lg:text-base">Get Extension</a>
+            <a href="https://chromewebstore.google.com/detail/exporter-tool-for-x-twitt/dchnaapcemfoohcdpdfkcejmhabnelib?utm_source=ext_app_menu"
+                target="_blank" rel="noopener" aria-label="Download X Exporter Chrome Extension"
+                class="clay-btn px-6 py-3 rounded-[20px] font-bold text-sm lg:text-base">Get Extension</a>
         </nav>
 
         <!-- Hero Section -->
@@ -176,14 +96,16 @@
                     The zero-risk, zero-config browser extension that respects your privacy. No API keys needed.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <button
+                    <a href="https://chromewebstore.google.com/detail/exporter-tool-for-x-twitt/dchnaapcemfoohcdpdfkcejmhabnelib?utm_source=ext_app_menu"
+                        target="_blank" rel="noopener"
+                        onclick="gtag('event', 'click_download', {'event_category': 'conversion', 'event_label': 'hero_section'});"
                         class="clay-btn px-8 py-4 rounded-[20px] font-bold text-lg flex items-center justify-center gap-2">
                         <span>Add to Browser</span>
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                         </svg>
-                    </button>
+                    </a>
                     <button id="watchDemoBtn"
                         class="clay-card px-8 py-4 !rounded-[20px] font-bold text-text-primary flex items-center justify-center gap-2 hover:text-accent-violet transition-colors">
                         <span>Watch Demo</span>
@@ -210,7 +132,8 @@
                             class="relative bg-gray-50 h-64 rounded-2xl flex items-center justify-center overflow-hidden">
                             <!-- UI Representation -->
                             <div class="absolute inset-0 flex flex-col items-center justify-center space-y-4">
-                                <img src="Xexporter.png" class="w-16 h-16 rounded-xl shadow-lg" alt="X Exporter Extension Interface - Export Followers to CSV">
+                                <img src="Xexporter.webp" class="w-16 h-16 rounded-xl shadow-lg"
+                                    alt="X Exporter Extension Interface - Export Followers to CSV">
                                 <div class="w-3/4 h-3 bg-gray-200 rounded-full"></div>
                                 <div class="w-1/2 h-3 bg-gray-200 rounded-full"></div>
                                 <div
@@ -303,6 +226,51 @@
             </div>
         </section>
 
+        <!-- Data Fields Section -->
+        <section class="mb-32">
+            <h2 class="text-3xl lg:text-4xl font-nunito font-black text-center text-text-primary mb-16">
+                What Data Fields Will You Get?
+            </h2>
+            <div class="max-w-5xl mx-auto clay-card p-8 lg:p-12 !rounded-[40px]">
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span
+                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60">User
+                        ID</span>
+                    <span
+                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60">Username</span>
+                    <span
+                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60">Display
+                        Name</span>
+                    <span
+                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60">Can
+                        DM</span>
+                    <span
+                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60">Followers</span>
+                    <span
+                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60">Following
+                        Count</span>
+                    <span
+                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60">Blue
+                        Verified</span>
+                    <span
+                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60">Created
+                        At</span>
+                    <span
+                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60">Tweets</span>
+                    <span
+                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60">Followed
+                        By</span>
+                    <span
+                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60">Following</span>
+                    <span
+                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60">Avatar
+                        Url</span>
+                    <span
+                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60">Description</span>
+                </div>
+            </div>
+        </section>
+
         <!-- How It Works -->
         <section class="max-w-4xl mx-auto mb-32">
             <h2 class="text-3xl lg:text-4xl font-nunito font-black text-center text-text-primary mb-16">
@@ -310,9 +278,9 @@
             </h2>
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Step 1 -->
-                <div class="text-center">
+                <div class="text-center relative">
                     <div
-                        class="w-16 h-16 mx-auto clay-card !shadow-pressed rounded-full flex items-center justify-center text-2xl font-black text-accent-violet mb-6">
+                        class="w-16 h-16 mx-auto clay-card !shadow-pressed rounded-full flex items-center justify-center text-2xl font-black text-accent-violet mb-6 relative z-10">
                         1
                     </div>
                     <h4 class="text-xl font-bold text-text-primary mb-2">Install & Pin</h4>
@@ -320,22 +288,99 @@
                     </p>
                 </div>
                 <!-- Step 2 -->
-                <div class="text-center">
+                <div class="text-center relative">
                     <div
-                        class="w-16 h-16 mx-auto clay-card !shadow-pressed rounded-full flex items-center justify-center text-2xl font-black text-accent-pink mb-6">
+                        class="w-16 h-16 mx-auto clay-card !shadow-pressed rounded-full flex items-center justify-center text-2xl font-black text-accent-pink mb-6 relative z-10">
                         2
                     </div>
                     <h4 class="text-xl font-bold text-text-primary mb-2">Browse</h4>
-                    <p class="text-text-secondary text-sm">Visit any Followers or Following page on X.com.</p>
+                    <p class="text-text-secondary text-sm">
+                        Go to <code
+                            class="bg-white px-2 py-0.5 rounded text-accent-pink text-xs font-mono">verified_followers</code>,
+                        <code class="bg-white px-2 py-0.5 rounded text-accent-pink text-xs font-mono">followers</code>,
+                        or
+                        <code class="bg-white px-2 py-0.5 rounded text-accent-pink text-xs font-mono">following</code>
+                        page.
+                    </p>
                 </div>
                 <!-- Step 3 -->
-                <div class="text-center">
+                <div class="text-center relative">
                     <div
-                        class="w-16 h-16 mx-auto clay-card !shadow-pressed rounded-full flex items-center justify-center text-2xl font-black text-accent-sky mb-6">
+                        class="w-16 h-16 mx-auto clay-card !shadow-pressed rounded-full flex items-center justify-center text-2xl font-black text-accent-sky mb-6 relative z-10">
                         3
                     </div>
                     <h4 class="text-xl font-bold text-text-primary mb-2">Export</h4>
-                    <p class="text-text-secondary text-sm">Click the floating panel to auto-scroll and download CSV.</p>
+                    <p class="text-text-secondary text-sm">Click refresh if needed. The plugin pops up, then use the
+                        export function.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="max-w-4xl mx-auto mb-32">
+            <h2 class="text-3xl lg:text-4xl font-nunito font-black text-center text-text-primary mb-16">
+                Common Questions
+            </h2>
+            <div class="space-y-6">
+                <!-- Q1 -->
+                <div class="clay-card p-6 !rounded-[24px]">
+                    <h3 class="text-lg font-bold text-text-primary mb-2">Why doesn't my plugin pop up?</h3>
+                    <p class="text-text-secondary">
+                        Go to the user's <span
+                            class="font-mono text-xs text-accent-violet bg-white px-1 rounded">verified_followers</span>,
+                        <span class="font-mono text-xs text-accent-violet bg-white px-1 rounded">followers</span>, or
+                        <span class="font-mono text-xs text-accent-violet bg-white px-1 rounded">following</span> page.
+                        If the plugin doesn't pop up, click the browser's refresh button.
+                    </p>
+                </div>
+                <!-- Q2 -->
+                <div class="clay-card p-6 !rounded-[24px]">
+                    <h3 class="text-lg font-bold text-text-primary mb-2">How to set the scrolling time interval?</h3>
+                    <p class="text-text-secondary">
+                        By default, it's a random value between 1.5s and 3.5s. You can set MIN_INTERVAL and
+                        MAX_INTERVAL.
+                        <span class="text-red-400 font-bold">⚠️ Warning:</span> It's not recommended to set it too
+                        short, as it may trigger X's risk control flags.
+                    </p>
+                </div>
+                <!-- Q3 -->
+                <div class="clay-card p-6 !rounded-[24px]">
+                    <h3 class="text-lg font-bold text-text-primary mb-2">How to set the number of exports?</h3>
+                    <p class="text-text-secondary">
+                        MAX_SCROLL_COUNT represents the number of page scrolls: each scroll collects info for roughly 20
+                        to 50 users.
+                        <span class="font-bold">∞</span> represents all data.
+                    </p>
+                </div>
+                <!-- Q4 -->
+                <div class="clay-card p-6 !rounded-[24px]">
+                    <h3 class="text-lg font-bold text-text-primary mb-2">What does MAX_EMPTY_SCROLLS mean?</h3>
+                    <p class="text-text-secondary">
+                        Stop when no more data is returned after MAX_EMPTY_SCROLLS consecutive scrolls.
+                    </p>
+                </div>
+                <!-- Q5 -->
+                <div class="clay-card p-6 !rounded-[24px]">
+                    <h3 class="text-lg font-bold text-text-primary mb-2">How to know who among the people I follow
+                        doesn't follow me back?</h3>
+                    <p class="text-text-secondary">
+                        Export the "following" user list, open it with Excel software, use the data filter function, and
+                        filter "Followed By" == FALSE.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Notes Alert -->
+            <div class="mt-12 clay-card p-6 !rounded-[24px] border-l-8 border-yellow-400 bg-yellow-50/50">
+                <div class="flex items-start gap-4">
+                    <div class="text-2xl">⚠️</div>
+                    <div>
+                        <h3 class="text-lg font-bold text-text-primary mb-1">Important Note</h3>
+                        <p class="text-text-secondary text-sm leading-relaxed">
+                            To avoid being flagged by X's risk control due to frequent data exports, please do not use
+                            it frequently.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -351,13 +396,16 @@
                     <p class="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
                         Join thousands of users effectively managing their X audience locally.
                     </p>
-                    <button class="clay-btn px-10 py-5 rounded-[24px] font-bold text-xl inline-flex items-center gap-3">
+                    <a href="https://chromewebstore.google.com/detail/exporter-tool-for-x-twitt/dchnaapcemfoohcdpdfkcejmhabnelib?utm_source=ext_app_menu"
+                        target="_blank" rel="noopener"
+                        onclick="gtag('event', 'click_download', {'event_category': 'conversion', 'event_label': 'footer_cta'});"
+                        class="clay-btn px-10 py-5 rounded-[24px] font-bold text-xl inline-flex items-center gap-3">
                         Download Now
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
                         </svg>
-                    </button>
+                    </a>
                 </div>
             </div>
         </section>
@@ -412,7 +460,7 @@
             if (e.target === videoModal) hideModal();
         };
     </script>
-    
+
     <!-- Structured Data (Schema.org) -->
     <script type="application/ld+json">
     {

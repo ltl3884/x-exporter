@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #F4F1FA;
+    font-family: 'DM Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Nunito', sans-serif;
+  }
+}
+
+@layer components {
+  .clay-card {
+    @apply bg-bg transition-all duration-300 ease-[cubic-bezier(0.25,0.8,0.25,1)];
+    box-shadow: 16px 16px 32px rgba(160, 150, 180, 0.2), -10px -10px 24px rgba(255, 255, 255, 0.9), inset 6px 6px 12px rgba(139, 92, 246, 0.03), inset -6px -6px 12px rgba(255, 255, 255, 1);
+    border-radius: 32px;
+  }
+
+  .clay-card:hover {
+    @apply -translate-y-2;
+    box-shadow: 20px 20px 40px rgba(160, 150, 180, 0.25), -12px -12px 28px rgba(255, 255, 255, 0.95), inset 6px 6px 12px rgba(139, 92, 246, 0.03), inset -6px -6px 12px rgba(255, 255, 255, 1);
+  }
+
+  .clay-btn {
+    @apply text-white transition-all duration-100 ease-out;
+    background: linear-gradient(135deg, #7C3AED, #DB2777);
+    box-shadow: 8px 8px 16px rgba(124, 58, 237, 0.3), -4px -4px 12px rgba(255, 255, 255, 0.5);
+  }
+
+  .clay-btn:active {
+    @apply scale-95;
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .text-gradient {
+    background: linear-gradient(to right, #7C3AED, #DB2777);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

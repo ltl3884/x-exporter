@@ -6,9 +6,11 @@
   "scripts": {
     "build": "bash build.sh",
     "build:dev": "MINIFY=false bash build.sh",
-    "build:prod": "MINIFY=true bash build.sh"
+    "build:prod": "MINIFY=true bash build.sh",
+    "build:landing": "tailwindcss -i ./x-exporter-landing/input.css -o ./x-exporter-landing/styles.css --minify"
   },
   "devDependencies": {
+    "tailwindcss": "^3.4.17",
     "terser": "^5.27.0"
   },
   "keywords": [
