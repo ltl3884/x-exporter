@@ -5,22 +5,22 @@
     <!-- Google Analytics 4 (GA4) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QSLSSQHRQZ"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-QSLSSQHRQZ');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-QSLSSQHRQZ');
     </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!-- SEO Meta Tags -->
     <title>X (Twitter) Followers Exporter - Export Verified Followers to CSV | Free Chrome Extension</title>
     <meta name="description"
-        content="Free Chrome extension to export X (Twitter) followers, verified users, and following lists to CSV. No API keys needed. 100% local & privacy-safe.">
+        content="Free Chrome extension to export X (Twitter) followers, verified users, and following lists to CSV. Find out who doesn't follow you back. No API keys needed. 100% local & privacy-safe.">
     <meta name="keywords"
-        content="twitter exporter, x followers export, twitter followers csv, export twitter data, chrome extension, verified followers, twitter tools">
+        content="twitter exporter, x followers export, twitter followers csv, export twitter data, chrome extension, verified followers, twitter tools, check unfollowers, who doesnt follow back">
     <meta name="author" content="ltl3884">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
@@ -32,7 +32,7 @@
     <meta property="og:url" content="https://www.example.com/">
     <meta property="og:title" content="X Followers Exporter - Export Twitter Data Safely">
     <meta property="og:description"
-        content="Free browser extension to export X (Twitter) followers to CSV. Zero configuration, 100% local privacy.">
+        content="Free browser extension to export X (Twitter) followers to CSV. Find out who doesn't follow you back. Zero configuration, 100% local privacy.">
     <!-- <meta property="og:image" content="https://www.example.com/og-image.png"> -->
     <meta property="og:locale" content="en_US">
 
@@ -41,7 +41,7 @@
     <meta name="twitter:url" content="https://www.example.com/">
     <meta name="twitter:title" content="X Followers Exporter - Export Twitter Data Safely">
     <meta name="twitter:description"
-        content="Free browser extension to export X (Twitter) followers to CSV. Zero configuration, 100% local privacy.">
+        content="Free browser extension to export X (Twitter) followers to CSV. Find out who doesn't follow you back. Zero configuration, 100% local privacy.">
     <!-- <meta name="twitter:image" content="https://www.example.com/twitter-card.png"> -->
 
     <!-- Google Fonts -->
@@ -77,11 +77,33 @@
         <nav class="flex justify-between items-center mb-16 lg:mb-24">
             <div class="flex items-center gap-3 clay-card px-6 py-3 rounded-full !rounded-[20px] hover:!translate-y-0">
                 <img src="Xexporter.webp" alt="X Followers Exporter Chrome Extension Logo" class="w-8 h-8 rounded-lg">
-                <span class="font-nunito font-extrabold text-xl text-text-primary">Exporter tool for X (Twitter)</span>
+                <span class="font-nunito font-extrabold text-xl text-text-primary" data-i18n="nav_title">Exporter tool
+                    for X (Twitter)</span>
             </div>
-            <a href="https://chromewebstore.google.com/detail/exporter-tool-for-x-twitt/dchnaapcemfoohcdpdfkcejmhabnelib?utm_source=ext_app_menu"
-                target="_blank" rel="noopener" aria-label="Download X Exporter Chrome Extension"
-                class="clay-btn px-6 py-3 rounded-[20px] font-bold text-sm lg:text-base">Get Extension</a>
+            <div class="flex items-center gap-4">
+                <div class="relative group">
+                    <select id="languageSelector" aria-label="Select Language" onchange="updateContent(this.value)"
+                        class="clay-btn px-4 py-3 rounded-[20px] font-bold text-sm lg:text-base outline-none cursor-pointer appearance-none pr-8 pl-4 bg-white text-text-primary">
+                        <option value="en">🇺🇸 EN</option>
+                        <option value="es">🇪🇸 ES</option>
+                        <option value="pt">🇵🇹 PT</option>
+                        <option value="ru">🇷🇺 RU</option>
+                        <option value="ja">🇯🇵 JA</option>
+                        <option value="zh-TW">🇹🇼 繁</option>
+                        <option value="zh-CN">🇨🇳 简</option>
+                    </select>
+                    <div class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-text-primary">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+                <a href="https://chromewebstore.google.com/detail/exporter-tool-for-x-twitt/dchnaapcemfoohcdpdfkcejmhabnelib?utm_source=ext_app_menu"
+                    target="_blank" rel="noopener" aria-label="Download X Exporter Chrome Extension"
+                    data-i18n="nav_get_extension"
+                    class="clay-btn px-6 py-3 rounded-[20px] font-bold text-sm lg:text-base">Get Extension</a>
+            </div>
         </nav>
 
         <!-- Hero Section -->
@@ -89,10 +111,10 @@
             <!-- Left: Text -->
             <div class="space-y-8">
                 <h1 class="text-5xl lg:text-7xl font-nunito font-black text-text-primary leading-[1.1]">
-                    <span class="block">Export X (Twitter) Followers to CSV</span>
-                    <span class="text-gradient">Safely. Locally.</span>
+                    <span class="block" data-i18n="hero_title_1">Export X (Twitter) Followers to CSV</span>
+                    <span class="text-gradient" data-i18n="hero_title_2">Safely. Locally.</span>
                 </h1>
-                <p class="text-xl text-text-secondary font-medium leading-relaxed max-w-lg">
+                <p class="text-xl text-text-secondary font-medium leading-relaxed max-w-lg" data-i18n="hero_subtitle">
                     The zero-risk, zero-config browser extension that respects your privacy. No API keys needed.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
@@ -100,7 +122,7 @@
                         target="_blank" rel="noopener"
                         onclick="gtag('event', 'click_download', {'event_category': 'conversion', 'event_label': 'hero_section'});"
                         class="clay-btn px-8 py-4 rounded-[20px] font-bold text-lg flex items-center justify-center gap-2">
-                        <span>Add to Browser</span>
+                        <span data-i18n="hero_add_browser">Add to Browser</span>
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -108,7 +130,7 @@
                     </a>
                     <button id="watchDemoBtn"
                         class="clay-card px-8 py-4 !rounded-[20px] font-bold text-text-primary flex items-center justify-center gap-2 hover:text-accent-violet transition-colors">
-                        <span>Watch Demo</span>
+                        <span data-i18n="hero_watch_demo">Watch Demo</span>
                     </button>
                 </div>
             </div>
@@ -152,7 +174,8 @@
 
         <!-- Key Advantages (Bento Grid) -->
         <section class="mb-32">
-            <h2 class="text-3xl lg:text-4xl font-nunito font-black text-center text-text-primary mb-16">
+            <h2 class="text-3xl lg:text-4xl font-nunito font-black text-center text-text-primary mb-16"
+                data-i18n="why_title">
                 Why <span class="text-accent-violet">Exporter tool for X (Twitter)</span>?
             </h2>
 
@@ -167,8 +190,9 @@
                         <div
                             class="w-12 h-12 rounded-full bg-accent-violet/10 flex items-center justify-center mb-6 text-2xl">
                             👻</div>
-                        <h3 class="text-2xl font-bold text-text-primary mb-4">Stealth Mode Traffic</h3>
-                        <p class="text-text-secondary leading-relaxed">
+                        <h3 class="text-2xl font-bold text-text-primary mb-4" data-i18n="card_stealth_title">Stealth
+                            Mode Traffic</h3>
+                        <p class="text-text-secondary leading-relaxed" data-i18n="card_stealth_desc">
                             "Parasitic" architecture that listens to passive traffic. No active crawling requests.
                             Simulates human scrolling with randomized intervals (1.5s - 3.5s) to stay completely under
                             the radar.
@@ -181,8 +205,9 @@
                     <div
                         class="w-12 h-12 rounded-full bg-accent-pink/10 flex items-center justify-center mb-6 text-2xl">
                         ⚡️</div>
-                    <h3 class="text-xl font-bold text-text-primary mb-2">Zero Configuration</h3>
-                    <p class="text-text-secondary text-sm leading-relaxed">
+                    <h3 class="text-xl font-bold text-text-primary mb-2" data-i18n="card_zero_title">Zero Configuration
+                    </h3>
+                    <p class="text-text-secondary text-sm leading-relaxed" data-i18n="card_zero_desc">
                         No expensive Twitter API keys. No OAuth. Reuses your active browser session instantly.
                     </p>
                 </div>
@@ -191,8 +216,9 @@
                 <div class="clay-card p-8 !rounded-[32px] flex flex-col justify-center relative overflow-hidden group">
                     <div class="w-12 h-12 rounded-full bg-accent-sky/10 flex items-center justify-center mb-6 text-2xl">
                         👀</div>
-                    <h3 class="text-xl font-bold text-text-primary mb-2">WYSIWYG Data</h3>
-                    <p class="text-text-secondary text-sm leading-relaxed">
+                    <h3 class="text-xl font-bold text-text-primary mb-2" data-i18n="card_wysiwyg_title">WYSIWYG Data
+                    </h3>
+                    <p class="text-text-secondary text-sm leading-relaxed" data-i18n="card_wysiwyg_desc">
                         Bypasses rate limits. If you can see it (Blue Verified, Follows You), we can export it.
                     </p>
                 </div>
@@ -201,8 +227,9 @@
                 <div class="clay-card p-8 !rounded-[32px] flex flex-col justify-center relative overflow-hidden group">
                     <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mb-6 text-2xl">🛡️
                     </div>
-                    <h3 class="text-xl font-bold text-text-primary mb-2">Anti-Ban Shield</h3>
-                    <p class="text-text-secondary text-sm leading-relaxed">
+                    <h3 class="text-xl font-bold text-text-primary mb-2" data-i18n="card_antiban_title">Anti-Ban Shield
+                    </h3>
+                    <p class="text-text-secondary text-sm leading-relaxed" data-i18n="card_antiban_desc">
                         Automatically piggybacks on official x-csrf-token. Immune to frontend encryption updates.
                     </p>
                 </div>
@@ -216,8 +243,9 @@
                     <div class="relative z-10">
                         <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mb-6 text-2xl">
                             🔒</div>
-                        <h3 class="text-xl font-bold text-text-primary mb-2">Local Privacy</h3>
-                        <p class="text-text-secondary text-sm leading-relaxed">
+                        <h3 class="text-xl font-bold text-text-primary mb-2" data-i18n="card_privacy_title">Local
+                            Privacy</h3>
+                        <p class="text-text-secondary text-sm leading-relaxed" data-i18n="card_privacy_desc">
                             100% browser-local execution. Data exports directly to CSV. No third-party servers ever
                             touch your data.
                         </p>
@@ -228,52 +256,67 @@
 
         <!-- Data Fields Section -->
         <section class="mb-32">
-            <h2 class="text-3xl lg:text-4xl font-nunito font-black text-center text-text-primary mb-16">
+            <h2 class="text-3xl lg:text-4xl font-nunito font-black text-center text-text-primary mb-16"
+                data-i18n="fields_title">
                 What Data Fields Will You Get?
             </h2>
             <div class="max-w-5xl mx-auto clay-card p-8 lg:p-12 !rounded-[40px]">
                 <div class="flex flex-wrap justify-center gap-4">
                     <span
-                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60">User
+                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60"
+                        data-i18n="field_userid">User
                         ID</span>
                     <span
-                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60">Username</span>
+                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60"
+                        data-i18n="field_username">Username</span>
                     <span
-                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60">Display
+                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60"
+                        data-i18n="field_displayname">Display
                         Name</span>
                     <span
-                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60">Can
+                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60"
+                        data-i18n="field_candm">Can
                         DM</span>
                     <span
-                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60">Followers</span>
+                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60"
+                        data-i18n="field_followers">Followers</span>
                     <span
-                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60">Following
+                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60"
+                        data-i18n="field_following_count">Following
                         Count</span>
                     <span
-                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60">Blue
+                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60"
+                        data-i18n="field_blue_verified">Blue
                         Verified</span>
                     <span
-                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60">Created
+                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60"
+                        data-i18n="field_created_at">Created
                         At</span>
                     <span
-                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60">Tweets</span>
+                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60"
+                        data-i18n="field_tweets">Tweets</span>
                     <span
-                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60">Followed
+                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60"
+                        data-i18n="field_followed_by">Followed
                         By</span>
                     <span
-                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60">Following</span>
+                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60"
+                        data-i18n="field_following">Following</span>
                     <span
-                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60">Avatar
+                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60"
+                        data-i18n="field_avatar_url">Avatar
                         Url</span>
                     <span
-                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60">Description</span>
+                        class="px-6 py-3 bg-white/50 rounded-full text-text-primary font-bold shadow-sm border border-white/60"
+                        data-i18n="field_description">Description</span>
                 </div>
             </div>
         </section>
 
         <!-- How It Works -->
         <section class="max-w-4xl mx-auto mb-32">
-            <h2 class="text-3xl lg:text-4xl font-nunito font-black text-center text-text-primary mb-16">
+            <h2 class="text-3xl lg:text-4xl font-nunito font-black text-center text-text-primary mb-16"
+                data-i18n="how_title">
                 How It Works
             </h2>
             <div class="grid md:grid-cols-3 gap-8">
@@ -283,8 +326,9 @@
                         class="w-16 h-16 mx-auto clay-card !shadow-pressed rounded-full flex items-center justify-center text-2xl font-black text-accent-violet mb-6 relative z-10">
                         1
                     </div>
-                    <h4 class="text-xl font-bold text-text-primary mb-2">Install & Pin</h4>
-                    <p class="text-text-secondary text-sm">Add the extension to Chrome/Edge and pin it to your toolbar.
+                    <h4 class="text-xl font-bold text-text-primary mb-2" data-i18n="how_step1_title">Install & Pin</h4>
+                    <p class="text-text-secondary text-sm" data-i18n="how_step1_desc">Add the extension to Chrome/Edge
+                        and pin it to your toolbar.
                     </p>
                 </div>
                 <!-- Step 2 -->
@@ -293,8 +337,8 @@
                         class="w-16 h-16 mx-auto clay-card !shadow-pressed rounded-full flex items-center justify-center text-2xl font-black text-accent-pink mb-6 relative z-10">
                         2
                     </div>
-                    <h4 class="text-xl font-bold text-text-primary mb-2">Browse</h4>
-                    <p class="text-text-secondary text-sm">
+                    <h4 class="text-xl font-bold text-text-primary mb-2" data-i18n="how_step2_title">Browse</h4>
+                    <p class="text-text-secondary text-sm" data-i18n="how_step2_desc">
                         Go to <code
                             class="bg-white px-2 py-0.5 rounded text-accent-pink text-xs font-mono">verified_followers</code>,
                         <code class="bg-white px-2 py-0.5 rounded text-accent-pink text-xs font-mono">followers</code>,
@@ -309,8 +353,9 @@
                         class="w-16 h-16 mx-auto clay-card !shadow-pressed rounded-full flex items-center justify-center text-2xl font-black text-accent-sky mb-6 relative z-10">
                         3
                     </div>
-                    <h4 class="text-xl font-bold text-text-primary mb-2">Export</h4>
-                    <p class="text-text-secondary text-sm">Click refresh if needed. The plugin pops up, then use the
+                    <h4 class="text-xl font-bold text-text-primary mb-2" data-i18n="how_step3_title">Export</h4>
+                    <p class="text-text-secondary text-sm" data-i18n="how_step3_desc">Click refresh if needed. The
+                        plugin pops up, then use the
                         export function.</p>
                 </div>
             </div>
@@ -318,14 +363,16 @@
 
         <!-- FAQ Section -->
         <section class="max-w-4xl mx-auto mb-32">
-            <h2 class="text-3xl lg:text-4xl font-nunito font-black text-center text-text-primary mb-16">
+            <h2 class="text-3xl lg:text-4xl font-nunito font-black text-center text-text-primary mb-16"
+                data-i18n="faq_title">
                 Common Questions
             </h2>
             <div class="space-y-6">
                 <!-- Q1 -->
                 <div class="clay-card p-6 !rounded-[24px]">
-                    <h3 class="text-lg font-bold text-text-primary mb-2">Why doesn't my plugin pop up?</h3>
-                    <p class="text-text-secondary">
+                    <h3 class="text-lg font-bold text-text-primary mb-2" data-i18n="faq_q1_title">Why doesn't my plugin
+                        pop up?</h3>
+                    <p class="text-text-secondary" data-i18n="faq_q1_desc">
                         Go to the user's <span
                             class="font-mono text-xs text-accent-violet bg-white px-1 rounded">verified_followers</span>,
                         <span class="font-mono text-xs text-accent-violet bg-white px-1 rounded">followers</span>, or
@@ -335,8 +382,9 @@
                 </div>
                 <!-- Q2 -->
                 <div class="clay-card p-6 !rounded-[24px]">
-                    <h3 class="text-lg font-bold text-text-primary mb-2">How to set the scrolling time interval?</h3>
-                    <p class="text-text-secondary">
+                    <h3 class="text-lg font-bold text-text-primary mb-2" data-i18n="faq_q2_title">How to set the
+                        scrolling time interval?</h3>
+                    <p class="text-text-secondary" data-i18n="faq_q2_desc">
                         By default, it's a random value between 1.5s and 3.5s. You can set MIN_INTERVAL and
                         MAX_INTERVAL.
                         <span class="text-red-400 font-bold">⚠️ Warning:</span> It's not recommended to set it too
@@ -345,8 +393,9 @@
                 </div>
                 <!-- Q3 -->
                 <div class="clay-card p-6 !rounded-[24px]">
-                    <h3 class="text-lg font-bold text-text-primary mb-2">How to set the number of exports?</h3>
-                    <p class="text-text-secondary">
+                    <h3 class="text-lg font-bold text-text-primary mb-2" data-i18n="faq_q3_title">How to set the number
+                        of exports?</h3>
+                    <p class="text-text-secondary" data-i18n="faq_q3_desc">
                         MAX_SCROLL_COUNT represents the number of page scrolls: each scroll collects info for roughly 20
                         to 50 users.
                         <span class="font-bold">∞</span> represents all data.
@@ -354,16 +403,18 @@
                 </div>
                 <!-- Q4 -->
                 <div class="clay-card p-6 !rounded-[24px]">
-                    <h3 class="text-lg font-bold text-text-primary mb-2">What does MAX_EMPTY_SCROLLS mean?</h3>
-                    <p class="text-text-secondary">
+                    <h3 class="text-lg font-bold text-text-primary mb-2" data-i18n="faq_q4_title">What does
+                        MAX_EMPTY_SCROLLS mean?</h3>
+                    <p class="text-text-secondary" data-i18n="faq_q4_desc">
                         Stop when no more data is returned after MAX_EMPTY_SCROLLS consecutive scrolls.
                     </p>
                 </div>
                 <!-- Q5 -->
                 <div class="clay-card p-6 !rounded-[24px]">
-                    <h3 class="text-lg font-bold text-text-primary mb-2">How to know who among the people I follow
-                        doesn't follow me back?</h3>
-                    <p class="text-text-secondary">
+                    <h3 class="text-lg font-bold text-text-primary mb-2" data-i18n="faq_q5_title">How to quickly find
+                        out who unfollowed me on X?
+                    </h3>
+                    <p class="text-text-secondary" data-i18n="faq_q5_desc">
                         Export the "following" user list, open it with Excel software, use the data filter function, and
                         filter "Followed By" == FALSE.
                     </p>
@@ -375,8 +426,8 @@
                 <div class="flex items-start gap-4">
                     <div class="text-2xl">⚠️</div>
                     <div>
-                        <h3 class="text-lg font-bold text-text-primary mb-1">Important Note</h3>
-                        <p class="text-text-secondary text-sm leading-relaxed">
+                        <h3 class="text-lg font-bold text-text-primary mb-1" data-i18n="note_title">Important Note</h3>
+                        <p class="text-text-secondary text-sm leading-relaxed" data-i18n="note_desc">
                             To avoid being flagged by X's risk control due to frequent data exports, please do not use
                             it frequently.
                         </p>
@@ -390,17 +441,18 @@
             <div class="clay-card p-12 !rounded-[50px] relative overflow-hidden max-w-5xl mx-auto">
                 <div class="absolute inset-0 opacity-10 bg-gradient-to-r from-accent-violet to-accent-pink"></div>
                 <div class="relative z-10">
-                    <h2 class="text-3xl lg:text-5xl font-nunito font-black text-text-primary mb-6">
+                    <h2 class="text-3xl lg:text-5xl font-nunito font-black text-text-primary mb-6"
+                        data-i18n="footer_title">
                         Ready to Export?
                     </h2>
-                    <p class="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
+                    <p class="text-lg text-text-secondary mb-8 max-w-2xl mx-auto" data-i18n="footer_subtitle">
                         Join thousands of users effectively managing their X audience locally.
                     </p>
                     <a href="https://chromewebstore.google.com/detail/exporter-tool-for-x-twitt/dchnaapcemfoohcdpdfkcejmhabnelib?utm_source=ext_app_menu"
                         target="_blank" rel="noopener"
                         onclick="gtag('event', 'click_download', {'event_category': 'conversion', 'event_label': 'footer_cta'});"
                         class="clay-btn px-10 py-5 rounded-[24px] font-bold text-xl inline-flex items-center gap-3">
-                        Download Now
+                        <span data-i18n="footer_cta">Download Now</span>
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
@@ -412,10 +464,13 @@
 
         <footer class="text-center text-text-secondary text-sm pb-8">
             <div class="flex justify-center gap-6 mb-4">
-                <a href="privacy.html" class="hover:text-accent-violet transition-colors">Privacy Policy</a>
-                <a href="terms.html" class="hover:text-accent-violet transition-colors">Terms of Service</a>
+                <a href="privacy.html" class="hover:text-accent-violet transition-colors"
+                    data-i18n="footer_privacy">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-accent-violet transition-colors" data-i18n="footer_terms">Terms
+                    of Service</a>
             </div>
-            &copy; 2026 Exporter tool for X (Twitter). All rights reserved. Not affiliated with X Corp.
+            <span data-i18n="footer_copy">&copy; 2026 Exporter tool for X (Twitter). All rights reserved. Not affiliated
+                with X Corp.</span>
         </footer>
 
     </div>
@@ -444,7 +499,7 @@
         const videoIframe = document.getElementById('videoIframe');
 
         watchDemoBtn.onclick = () => {
-            videoIframe.src = "https://www.youtube.com/embed/Yz4R5orFIs0?autoplay=1";
+            videoIframe.src = "https://www.youtube.com/embed/gc3ll2B5Kq8?autoplay=1";
             videoModal.classList.remove('hidden');
             videoModal.classList.add('flex');
         };
@@ -459,6 +514,97 @@
         videoModal.onclick = (e) => {
             if (e.target === videoModal) hideModal();
         };
+    </script>
+
+    <!-- Internationalization -->
+    <script src="translations.js"></script>
+    <script>
+        function updateContent(lang) {
+            // Update Text Content
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+
+            // Update SEO Metadata
+            if (translations[lang]) {
+                const t = translations[lang];
+
+                // Title
+                if (t.seo_title) document.title = t.seo_title;
+
+                // Meta Description
+                if (t.seo_description) {
+                    const metaDesc = document.querySelector('meta[name="description"]');
+                    if (metaDesc) metaDesc.setAttribute('content', t.seo_description);
+                    const ogDesc = document.querySelector('meta[property="og:description"]');
+                    if (ogDesc) ogDesc.setAttribute('content', t.seo_description);
+                    const twDesc = document.querySelector('meta[name="twitter:description"]');
+                    if (twDesc) twDesc.setAttribute('content', t.seo_description);
+                }
+
+                // Meta Keywords
+                if (t.seo_keywords) {
+                    const metaKw = document.querySelector('meta[name="keywords"]');
+                    if (metaKw) metaKw.setAttribute('content', t.seo_keywords);
+                }
+
+                // OG Title
+                if (t.seo_title) {
+                    const ogTitle = document.querySelector('meta[property="og:title"]');
+                    if (ogTitle) ogTitle.setAttribute('content', t.seo_title);
+                    const twTitle = document.querySelector('meta[name="twitter:title"]');
+                    if (twTitle) twTitle.setAttribute('content', t.seo_title);
+                }
+            }
+
+            localStorage.setItem('preferredLanguage', lang);
+            document.documentElement.lang = lang;
+
+            // Update selector value if it exists
+            const selector = document.getElementById('languageSelector');
+            if (selector && selector.value !== lang) {
+                selector.value = lang;
+            }
+        }
+
+        function initLanguage() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+
+            // Default to English
+            let targetLang = 'en';
+
+            if (savedLang && translations[savedLang]) {
+                targetLang = savedLang;
+            } else {
+                // Detect browser language
+                const browserLang = navigator.language;
+
+                // 1. Exact match (e.g. zh-CN, zh-TW)
+                if (translations[browserLang]) {
+                    targetLang = browserLang;
+                }
+                // 2. Primary code match (e.g. es-419 -> es, ja-JP -> ja)
+                else if (translations[browserLang.slice(0, 2)]) {
+                    targetLang = browserLang.slice(0, 2);
+                }
+                // 3. Special cases
+                else if (browserLang === 'zh-HK') {
+                    targetLang = 'zh-TW';
+                }
+            }
+
+            // Final validation: if detected/saved lang doesn't exist, strictly fallback to 'en'
+            if (!translations[targetLang]) {
+                targetLang = 'en';
+            }
+
+            updateContent(targetLang);
+        }
+
+        document.addEventListener('DOMContentLoaded', initLanguage);
     </script>
 
     <!-- Structured Data (Schema.org) -->
